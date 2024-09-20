@@ -1,22 +1,19 @@
 import React from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Analytics from './components/Analytics'
-import Newsletter from './components/Newsletter'
-import Cards from './components/Cards'
-import Footer from './components/Footer'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import SignUp from './pages/SignUp'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 function App() {
- 
-
   return (
     <>
-    <Navbar/>
-    <Hero/>
-    <Analytics/>
-    <Newsletter/>
-    <Cards/>
-    <Footer/>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/signup' element={<SignUp/>}/>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
